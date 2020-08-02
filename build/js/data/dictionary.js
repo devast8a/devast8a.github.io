@@ -106,10 +106,11 @@ if (new Set(devToMaya.values()).size !== devToMaya.size) {
     console.log('== Duplicate word in dictionary');
 }
 // For debugging purposes automatically add translations for the following words.
-export const debugging = Array.from(devToMaya.keys());
-for (const word of debugging) {
-    const translation = devToMaya.get(word);
-    playerToMaya.set(word, translation);
-    mayaToPlayer.set(translation, word);
-}
+//export const debugging = Array.from(devToMaya.keys());
+//
+//for(const word of debugging){
+//    const translation = devToMaya.get(word)!;
+//    playerToMaya.set(word, translation);
+//    mayaToPlayer.set(translation, word);
+//}
 //# sourceMappingURL=dictionary.js.map

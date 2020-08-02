@@ -4,7 +4,7 @@ import { CharacterAnimations } from './data/animations.js';
 import { TmxEngine } from './tmx.js';
 import { PathFinder } from './path_finder.js';
 import { tutorial } from './scripts/tutorial.js';
-import { devToMaya, mayaToPlayer, debugging } from './data/dictionary.js';
+import { devToMaya, mayaToPlayer } from './data/dictionary.js';
 import { FullscreenText } from './fullscreen_text.js';
 import { _ } from './language_handler.js';
 function translate(words, dictionary) {
@@ -163,7 +163,7 @@ export class Simulation {
         this.enableTranslation = false;
         this.enableMovement = false;
         this.enableDictionary = false;
-        this.LRUwords = debugging.map(x => devToMaya.get(x));
+        this.LRUwords = new Array();
     }
     showFullscreenText(text) {
         this.fullscreenText = new FullscreenText(text);
