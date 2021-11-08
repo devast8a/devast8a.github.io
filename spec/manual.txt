@@ -1,0 +1,38 @@
+  _______________________________________  
+ /   _____/\______   \_   _____/\_   ___ \    The Spec(R) Developer Manual.
+ \_____  \  |     ___/|    __)_ /    \  \/       Copyright DevCorp 1981.
+ /        \ |    |    |        \\     \____ 
+/_______  / |____|   /_______  / \______  /        JULY 1 1981 - REVISION 2.
+        \/                   \/         \/ 
+
+The Spec is the world's highest performance 16-bit microprocessor, featuring two
+16-bit registers, a full 64KB of memory, and the absolute latest in out-of-order
+execution technology.
+
+================================================================================
+ERRATA
+JULY 1 1981 - REVISION 2.
+    It is possible for the Spec to incorrectly predict the outcome of branch
+    instructions, which may result in unpredictable behavior. DevCorp recommends
+    that developers mitigate this problem in software.
+================================================================================
+
+The Spec has two registers 'x' and 'y' that are both 16-bits. Each instruction
+is encoded as two 16-bit words. The first word is the instruction opcode and the
+second word is the instruction immediate. The immediate is always required, but
+may not be used by all instructions.
+
+Each line in the assembler must either contain an instruction, start with a '#'
+symbol, or be blank. The assembler will not assemble a program if it contains an
+invalid instruction. The assembler loads the program to 0x8000.
+
+Instructions
+  opcode | mnemonic | immediate | description
+       0 | halt     | n/a       | Halts the processor
+       1 | set      | value     | Set register 'x' to value
+       2 | swap     | n/a       | Swap the value of register x and y
+       3 | load     | n/a       | Read address x into register y
+       4 | store    | n/a       | Store register y into address x
+       5 | branch   | target    | Branch to 'target' if x is positive.
+       6 | sub      | n/a       | x = x - y
+       7 | add      | n/a       | x = x + y

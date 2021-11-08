@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <script type="module" src="editor.js"></script>
+    <style>
+        #state {
+            font-family: monospace;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .layout {
+            display: flex;
+            height: 100%;
+        }
+
+        .layout>div {
+            padding: 5px;
+        }
+
+        button {
+            width: 100px;
+            height: 75px;
+        }
+
+        .executed {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <div style="flex-grow: 1">
+            <textarea id="program"></textarea>
+        </div>
+        <div style="width: 350px">
+            <div>
+                <button id="step">Step</button>
+                <button id="restart">Restart</button>
+            </div>
+            <pre>
+  _______________________________________  
+ /   _____/\______   \_   _____/\_   ___ \ 
+ \_____  \  |     ___/|    __)_ /    \  \/ 
+ /        \ |    |    |        \\     \____
+/_______  / |____|   /_______  / \______  /
+        \/                   \/         \/ 
+            <a href="manual.txt">Manual</a>
+            </pre>
+            <div id="state">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
